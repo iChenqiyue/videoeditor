@@ -16,11 +16,10 @@ namespace videoeditor
     public partial class mainform : Form
     {
 
-        //全局变量
-        private string files_path = "D:/video/phone_vedio";
-        styleinit dgvstyle = new styleinit();
+        
         private bool dragging = false;
         private Point startpoint = new Point(0, 0);
+        public string fileselected = "";
 
         public mainform()
         {
@@ -29,28 +28,7 @@ namespace videoeditor
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            //初始化表格格式
-            dgvstyle.ColorDataGridView(dgv_files);
-
-            //获得仓库路径中视频文件
-            DirectoryInfo folder = new DirectoryInfo(files_path);
-            var Files = Directory.GetFiles(files_path).Where(s=>s.EndsWith(".MP4") || s.EndsWith(".WMV") || s.EndsWith(".WMV")
-            || s.EndsWith(".AVI") || s.EndsWith(".MOV") || s.EndsWith(".F4") || s.EndsWith(".MKV"));
-            DataTable dt = new DataTable("fileinfo");
-            dt.Columns.Add("文件名");
-            dt.Columns.Add("修改时间");
-            dt.Columns.Add("大小");
-
-            foreach (string file in Files)
-            {
-                FileInfo fileInfo = new FileInfo(file);
-                dt.Rows.Add(fileInfo.Name, fileInfo.LastWriteTime, System.Math.Ceiling(fileInfo.Length / 1024.0) + " KB");
-            }
-            dgv_files.DataSource = dt;
-
-            //调整表格显示格式
-            dgv_files.Columns[0].FillWeight = 140;
-            dgv_files.Columns[2].FillWeight = 70;
+            
 
 
         }
@@ -120,31 +98,48 @@ namespace videoeditor
         /// <param name="e"></param>
         private void dgv_files_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgv_files.SelectedRows.Count>0)
-                lbl_title.Text = dgv_files.SelectedRows[0].Cells[0].Value.ToString();
+            
         }
 
 
         #region 倍速设置
-        private void btn_speed_Click(object sender, EventArgs e)
-        {
-            cbo_speed.DroppedDown = true;
-        }
 
-        private void cbo_speed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbo_speed.SelectedItem.ToString() == "1.0X")
-            {
-                btn_speed.Text = "倍速";
-            }
-            else
-            {
-                btn_speed.Text = cbo_speed.SelectedItem.ToString();
-            }
-        }
+
+
         #endregion
 
 
-        
+
+
+
+        private Form activeform = null;
+        private void openchidform(Form childform)
+        {
+            if (activeform != null)
+                activeform.Close();
+            activeform = childform;
+            childform.TopLevel = false;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
+            panel_container.Controls.Add(childform);
+            panel_container.Tag = childform;
+            childform.BringToFront();
+            childform.Show();
+        }
+
+
+
+        private void btn_depository_Click(object sender, EventArgs e)
+        {
+            repository myform = new repository();
+            myform.fileselected += new fileselectHandler(fileselect);
+            openchidform(myform);
+        }
+
+        void fileselect(string filename)
+        {
+            fileselected = filename;
+            openchidform(new editor(fileselected));
+        }
     }
 }
