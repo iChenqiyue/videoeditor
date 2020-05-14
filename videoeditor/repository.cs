@@ -22,7 +22,8 @@ namespace videoeditor
 
         public event fileselectHandler fileselected;  //定义事件
         //全局变量
-        private string files_path = "D:/video/phone_vedio";
+        
+        string files_path = userpath.filepath;
         public string filename = "";
         styleinit dgvstyle = new styleinit();
 
@@ -50,19 +51,31 @@ namespace videoeditor
             //调整表格显示格式
             dgv_files.Columns[0].FillWeight = 140;
             dgv_files.Columns[2].FillWeight = 70;
+
+            trackbar_volume.Visible = false;
+
         }
 
+
+        /// <summary>
+        /// 显示选中视频信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_files_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_files.SelectedRows.Count > 0)
                 lbl_title.Text = dgv_files.SelectedRows[0].Cells[0].Value.ToString();
         }
 
+
+
+        #region 倍速设置
         private void btn_speed_Click(object sender, EventArgs e)
         {
             cbo_speed.DroppedDown = true;
         }
-
+      
         private void cbo_speed_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbo_speed.SelectedItem.ToString() == "1.0X")
@@ -75,6 +88,10 @@ namespace videoeditor
             }
         }
 
+
+        #endregion
+
+
         private void btn_edit_Click(object sender, EventArgs e)
         {
             
@@ -82,6 +99,14 @@ namespace videoeditor
             Console.WriteLine(filename);
             fileselected(filename);
             this.Close();           
+        }
+
+        private void pic_volume_Click(object sender, EventArgs e)
+        {
+            if (trackbar_volume.Visible == false)
+                trackbar_volume.Visible = true;
+            else
+                trackbar_volume.Visible = false;
         }
     }
 }

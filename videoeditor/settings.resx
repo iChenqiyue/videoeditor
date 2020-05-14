@@ -117,28 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="axTimelineControl.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIQAAAAIB
-        AAAAAQAAAAAAAAAAAAAAAAwAAAAACgAA2BMAANgTAAAL
-</value>
-  </data>
-  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pic_volume.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4wkMFyoiuKAmfAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEDSURBVEhL
-        tZY7CsJAFEUD2mkTYqmNW9HONWjhCmzUxkLci4q1i1B7wT3Y2grjmV8IYUJi8nLgQnLfcC9k8ovqoJTa
-        og9aOUsOQnfIc3e2DARubG7Kw42aQ1g+XCNTQFAoXNO8gJCicE21AhZ2UBxQdkNDlBewaIzeZvn/pAUc
-        D9AJHVDf2WYwR3XJFiytZXihxA8WxqpHtiBBd+NaLn4gUqDhvIuuZqLUF41ECzR4EzsyzNoomNqRQbaA
-        8/wlGooVcJzf5LMftHGbPlHsB5IP2hHtUc/ZFoz2XhVlELK2WUGaF2gIKiqRKdAQFiqRK9AQ2N4n00No
-        duNvzpaF4Iq/LVH0A1cEgRAF6iTgAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

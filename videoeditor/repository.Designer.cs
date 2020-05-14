@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(repository));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_detail = new System.Windows.Forms.Panel();
             this.panel_operator = new System.Windows.Forms.Panel();
@@ -40,21 +40,20 @@
             this.lbl_detial = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel_video = new System.Windows.Forms.Panel();
+            this.trackbar_volume = new System.Windows.Forms.TrackBar();
             this.panel_play = new System.Windows.Forms.Panel();
             this.pic_play = new System.Windows.Forms.PictureBox();
             this.panel_Player = new System.Windows.Forms.Panel();
+            this.lbl_end = new System.Windows.Forms.Label();
+            this.lbl_start = new System.Windows.Forms.Label();
             this.panelspeed = new System.Windows.Forms.Panel();
             this.btn_speed = new System.Windows.Forms.Button();
             this.cbo_speed = new System.Windows.Forms.ComboBox();
-            this.lbl_volume = new System.Windows.Forms.Label();
-            this.panel_volume = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_timeline = new System.Windows.Forms.Panel();
             this.pic_volume = new System.Windows.Forms.PictureBox();
             this.pic_pre = new System.Windows.Forms.PictureBox();
             this.pic_next = new System.Windows.Forms.PictureBox();
             this.pic_pause = new System.Windows.Forms.PictureBox();
+            this.trackbar_timeline = new System.Windows.Forms.TrackBar();
             this.panel_left = new System.Windows.Forms.Panel();
             this.panel_result = new System.Windows.Forms.Panel();
             this.dgv_files = new System.Windows.Forms.DataGridView();
@@ -67,6 +66,7 @@
             this.panel_detail.SuspendLayout();
             this.panel_operator.SuspendLayout();
             this.panel_video.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_volume)).BeginInit();
             this.panel_play.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_play)).BeginInit();
             this.panel_Player.SuspendLayout();
@@ -75,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_pre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_next)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_timeline)).BeginInit();
             this.panel_left.SuspendLayout();
             this.panel_result.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_files)).BeginInit();
@@ -86,13 +87,13 @@
             // 
             // panel_container
             // 
-            this.panel_container.Controls.Add(this.panel_detail);
             this.panel_container.Controls.Add(this.panel_video);
+            this.panel_container.Controls.Add(this.panel_detail);
             this.panel_container.Controls.Add(this.panel_left);
             this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_container.Location = new System.Drawing.Point(0, 0);
             this.panel_container.Name = "panel_container";
-            this.panel_container.Size = new System.Drawing.Size(1274, 892);
+            this.panel_container.Size = new System.Drawing.Size(1274, 676);
             this.panel_container.TabIndex = 2;
             // 
             // panel_detail
@@ -101,10 +102,10 @@
             this.panel_detail.Controls.Add(this.panel_operator);
             this.panel_detail.Controls.Add(this.lbl_detial);
             this.panel_detail.Controls.Add(this.lbl_title);
-            this.panel_detail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_detail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_detail.Location = new System.Drawing.Point(412, 520);
             this.panel_detail.Name = "panel_detail";
-            this.panel_detail.Size = new System.Drawing.Size(862, 372);
+            this.panel_detail.Size = new System.Drawing.Size(862, 156);
             this.panel_detail.TabIndex = 3;
             // 
             // panel_operator
@@ -114,7 +115,7 @@
             this.panel_operator.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel_operator.Location = new System.Drawing.Point(743, 0);
             this.panel_operator.Name = "panel_operator";
-            this.panel_operator.Size = new System.Drawing.Size(119, 372);
+            this.panel_operator.Size = new System.Drawing.Size(119, 156);
             this.panel_operator.TabIndex = 2;
             // 
             // btn_delete
@@ -171,13 +172,25 @@
             // panel_video
             // 
             this.panel_video.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panel_video.Controls.Add(this.trackbar_volume);
             this.panel_video.Controls.Add(this.panel_play);
             this.panel_video.Controls.Add(this.panel_Player);
-            this.panel_video.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_video.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_video.Location = new System.Drawing.Point(412, 0);
             this.panel_video.Name = "panel_video";
             this.panel_video.Size = new System.Drawing.Size(862, 520);
             this.panel_video.TabIndex = 2;
+            // 
+            // trackbar_volume
+            // 
+            this.trackbar_volume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.trackbar_volume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.trackbar_volume.Location = new System.Drawing.Point(94, 330);
+            this.trackbar_volume.Name = "trackbar_volume";
+            this.trackbar_volume.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackbar_volume.Size = new System.Drawing.Size(56, 132);
+            this.trackbar_volume.TabIndex = 14;
+            this.trackbar_volume.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // panel_play
             // 
@@ -191,10 +204,11 @@
             // pic_play
             // 
             this.pic_play.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_play.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic_play.Image = global::videoeditor.Properties.Resources.play;
-            this.pic_play.Location = new System.Drawing.Point(356, 128);
+            this.pic_play.Location = new System.Drawing.Point(0, 0);
             this.pic_play.Name = "pic_play";
-            this.pic_play.Size = new System.Drawing.Size(137, 144);
+            this.pic_play.Size = new System.Drawing.Size(862, 412);
             this.pic_play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_play.TabIndex = 12;
             this.pic_play.TabStop = false;
@@ -202,27 +216,48 @@
             // panel_Player
             // 
             this.panel_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panel_Player.Controls.Add(this.lbl_end);
+            this.panel_Player.Controls.Add(this.lbl_start);
             this.panel_Player.Controls.Add(this.panelspeed);
-            this.panel_Player.Controls.Add(this.lbl_volume);
-            this.panel_Player.Controls.Add(this.panel_volume);
-            this.panel_Player.Controls.Add(this.label2);
-            this.panel_Player.Controls.Add(this.label1);
-            this.panel_Player.Controls.Add(this.panel_timeline);
             this.panel_Player.Controls.Add(this.pic_volume);
             this.panel_Player.Controls.Add(this.pic_pre);
             this.panel_Player.Controls.Add(this.pic_next);
             this.panel_Player.Controls.Add(this.pic_pause);
+            this.panel_Player.Controls.Add(this.trackbar_timeline);
             this.panel_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_Player.Location = new System.Drawing.Point(0, 412);
             this.panel_Player.Name = "panel_Player";
             this.panel_Player.Size = new System.Drawing.Size(862, 108);
             this.panel_Player.TabIndex = 2;
             // 
+            // lbl_end
+            // 
+            this.lbl_end.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_end.AutoSize = true;
+            this.lbl_end.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_end.Location = new System.Drawing.Point(779, 26);
+            this.lbl_end.Name = "lbl_end";
+            this.lbl_end.Size = new System.Drawing.Size(71, 15);
+            this.lbl_end.TabIndex = 16;
+            this.lbl_end.Text = "00:00:00";
+            // 
+            // lbl_start
+            // 
+            this.lbl_start.AutoSize = true;
+            this.lbl_start.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_start.Location = new System.Drawing.Point(6, 26);
+            this.lbl_start.Name = "lbl_start";
+            this.lbl_start.Size = new System.Drawing.Size(71, 15);
+            this.lbl_start.TabIndex = 14;
+            this.lbl_start.Text = "00:00:00";
+            // 
             // panelspeed
             // 
+            this.panelspeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelspeed.Controls.Add(this.btn_speed);
             this.panelspeed.Controls.Add(this.cbo_speed);
-            this.panelspeed.Location = new System.Drawing.Point(574, 52);
+            this.panelspeed.Location = new System.Drawing.Point(682, 50);
             this.panelspeed.Name = "panelspeed";
             this.panelspeed.Size = new System.Drawing.Size(98, 38);
             this.panelspeed.TabIndex = 13;
@@ -264,76 +299,27 @@
             this.cbo_speed.TabIndex = 12;
             this.cbo_speed.SelectedIndexChanged += new System.EventHandler(this.cbo_speed_SelectedIndexChanged);
             // 
-            // lbl_volume
-            // 
-            this.lbl_volume.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_volume.AutoSize = true;
-            this.lbl_volume.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_volume.Location = new System.Drawing.Point(297, 59);
-            this.lbl_volume.Name = "lbl_volume";
-            this.lbl_volume.Size = new System.Drawing.Size(23, 15);
-            this.lbl_volume.TabIndex = 11;
-            this.lbl_volume.Text = "0%";
-            // 
-            // panel_volume
-            // 
-            this.panel_volume.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel_volume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(33)))), ((int)(((byte)(50)))));
-            this.panel_volume.Location = new System.Drawing.Point(142, 65);
-            this.panel_volume.Name = "panel_volume";
-            this.panel_volume.Size = new System.Drawing.Size(150, 5);
-            this.panel_volume.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(12, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "00:00";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(806, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "00:00";
-            // 
-            // panel_timeline
-            // 
-            this.panel_timeline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_timeline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(33)))), ((int)(((byte)(50)))));
-            this.panel_timeline.Location = new System.Drawing.Point(58, 24);
-            this.panel_timeline.Name = "panel_timeline";
-            this.panel_timeline.Size = new System.Drawing.Size(742, 5);
-            this.panel_timeline.TabIndex = 8;
-            // 
             // pic_volume
             // 
-            this.pic_volume.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pic_volume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_volume.Image = ((System.Drawing.Image)(resources.GetObject("pic_volume.Image")));
-            this.pic_volume.Location = new System.Drawing.Point(109, 56);
+            this.pic_volume.Location = new System.Drawing.Point(94, 56);
             this.pic_volume.Name = "pic_volume";
             this.pic_volume.Size = new System.Drawing.Size(24, 24);
             this.pic_volume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic_volume.TabIndex = 7;
             this.pic_volume.TabStop = false;
+            this.pic_volume.Click += new System.EventHandler(this.pic_volume_Click);
             // 
             // pic_pre
             // 
             this.pic_pre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pic_pre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_pre.Image = ((System.Drawing.Image)(resources.GetObject("pic_pre.Image")));
-            this.pic_pre.Location = new System.Drawing.Point(360, 56);
+            this.pic_pre.Image = global::videoeditor.Properties.Resources.backwardfill;
+            this.pic_pre.Location = new System.Drawing.Point(354, 52);
             this.pic_pre.Name = "pic_pre";
-            this.pic_pre.Size = new System.Drawing.Size(24, 24);
+            this.pic_pre.Size = new System.Drawing.Size(32, 32);
             this.pic_pre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic_pre.TabIndex = 3;
             this.pic_pre.TabStop = false;
@@ -342,10 +328,10 @@
             // 
             this.pic_next.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pic_next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_next.Image = ((System.Drawing.Image)(resources.GetObject("pic_next.Image")));
-            this.pic_next.Location = new System.Drawing.Point(469, 56);
+            this.pic_next.Image = global::videoeditor.Properties.Resources.play_forward_fill;
+            this.pic_next.Location = new System.Drawing.Point(468, 52);
             this.pic_next.Name = "pic_next";
-            this.pic_next.Size = new System.Drawing.Size(24, 24);
+            this.pic_next.Size = new System.Drawing.Size(32, 32);
             this.pic_next.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic_next.TabIndex = 2;
             this.pic_next.TabStop = false;
@@ -354,13 +340,23 @@
             // 
             this.pic_pause.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pic_pause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_pause.Image = ((System.Drawing.Image)(resources.GetObject("pic_pause.Image")));
+            this.pic_pause.Image = global::videoeditor.Properties.Resources.playfill;
             this.pic_pause.Location = new System.Drawing.Point(411, 52);
             this.pic_pause.Name = "pic_pause";
             this.pic_pause.Size = new System.Drawing.Size(32, 32);
             this.pic_pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic_pause.TabIndex = 1;
             this.pic_pause.TabStop = false;
+            // 
+            // trackbar_timeline
+            // 
+            this.trackbar_timeline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackbar_timeline.Location = new System.Drawing.Point(82, 21);
+            this.trackbar_timeline.Name = "trackbar_timeline";
+            this.trackbar_timeline.Size = new System.Drawing.Size(695, 56);
+            this.trackbar_timeline.TabIndex = 15;
+            this.trackbar_timeline.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // panel_left
             // 
@@ -369,7 +365,7 @@
             this.panel_left.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_left.Location = new System.Drawing.Point(0, 0);
             this.panel_left.Name = "panel_left";
-            this.panel_left.Size = new System.Drawing.Size(412, 892);
+            this.panel_left.Size = new System.Drawing.Size(412, 676);
             this.panel_left.TabIndex = 1;
             // 
             // panel_result
@@ -378,7 +374,7 @@
             this.panel_result.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_result.Location = new System.Drawing.Point(0, 128);
             this.panel_result.Name = "panel_result";
-            this.panel_result.Size = new System.Drawing.Size(412, 764);
+            this.panel_result.Size = new System.Drawing.Size(412, 548);
             this.panel_result.TabIndex = 1;
             // 
             // dgv_files
@@ -386,40 +382,40 @@
             this.dgv_files.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.dgv_files.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_files.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_files.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_files.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_files.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_files.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_files.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_files.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_files.GridColor = System.Drawing.Color.Gray;
             this.dgv_files.Location = new System.Drawing.Point(0, 0);
             this.dgv_files.Name = "dgv_files";
             this.dgv_files.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_files.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_files.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_files.RowHeadersVisible = false;
             this.dgv_files.RowHeadersWidth = 51;
             this.dgv_files.RowTemplate.Height = 27;
-            this.dgv_files.Size = new System.Drawing.Size(412, 764);
+            this.dgv_files.Size = new System.Drawing.Size(412, 548);
             this.dgv_files.TabIndex = 0;
             this.dgv_files.SelectionChanged += new System.EventHandler(this.dgv_files_SelectionChanged);
             // 
@@ -481,7 +477,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(1274, 892);
+            this.ClientSize = new System.Drawing.Size(1274, 676);
             this.Controls.Add(this.panel_container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "repository";
@@ -492,6 +488,8 @@
             this.panel_detail.PerformLayout();
             this.panel_operator.ResumeLayout(false);
             this.panel_video.ResumeLayout(false);
+            this.panel_video.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_volume)).EndInit();
             this.panel_play.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_play)).EndInit();
             this.panel_Player.ResumeLayout(false);
@@ -501,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_pre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_next)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_timeline)).EndInit();
             this.panel_left.ResumeLayout(false);
             this.panel_result.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_files)).EndInit();
@@ -529,12 +528,6 @@
         private System.Windows.Forms.Panel panelspeed;
         private System.Windows.Forms.Button btn_speed;
         private System.Windows.Forms.ComboBox cbo_speed;
-        private System.Windows.Forms.Label lbl_volume;
-        private System.Windows.Forms.Panel panel_volume;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel_timeline;
-        private System.Windows.Forms.PictureBox pic_volume;
         private System.Windows.Forms.PictureBox pic_pre;
         private System.Windows.Forms.PictureBox pic_next;
         private System.Windows.Forms.PictureBox pic_pause;
@@ -546,5 +539,10 @@
         private System.Windows.Forms.Panel pan_search;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.PictureBox pic_search;
+        private System.Windows.Forms.PictureBox pic_volume;
+        private System.Windows.Forms.Label lbl_start;
+        private System.Windows.Forms.TrackBar trackbar_timeline;
+        private System.Windows.Forms.Label lbl_end;
+        private System.Windows.Forms.TrackBar trackbar_volume;
     }
 }

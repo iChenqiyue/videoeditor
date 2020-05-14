@@ -20,6 +20,9 @@ namespace videoeditor
         private bool dragging = false;
         private Point startpoint = new Point(0, 0);
         public string fileselected = "";
+        
+        
+
 
         public mainform()
         {
@@ -28,8 +31,7 @@ namespace videoeditor
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            
-
+           
 
         }
         #region 窗体设置
@@ -102,11 +104,10 @@ namespace videoeditor
         }
 
 
-        #region 倍速设置
 
 
 
-        #endregion
+
 
 
 
@@ -140,6 +141,17 @@ namespace videoeditor
         {
             fileselected = filename;
             openchidform(new editor(fileselected));
+        }
+
+        private void btn_editform_Click(object sender, EventArgs e)
+        {
+            openchidform(new editor());
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            settings myform = new settings();
+            myform.ShowDialog();
         }
     }
 }

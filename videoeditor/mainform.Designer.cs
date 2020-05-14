@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
+            this.btn_record = new System.Windows.Forms.Button();
             this.btn_min = new System.Windows.Forms.Button();
             this.btn_max = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btn_depository = new System.Windows.Forms.Button();
             this.btn_logo = new System.Windows.Forms.Button();
             this.panel_container = new System.Windows.Forms.Panel();
-            this.btn_record = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,23 @@
             this.panel_top.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseDown);
             this.panel_top.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseMove);
             this.panel_top.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_top_MouseUp);
+            // 
+            // btn_record
+            // 
+            this.btn_record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.btn_record.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_record.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_record.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_record.ForeColor = System.Drawing.Color.White;
+            this.btn_record.Image = global::videoeditor.Properties.Resources.record;
+            this.btn_record.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_record.Location = new System.Drawing.Point(641, 14);
+            this.btn_record.Name = "btn_record";
+            this.btn_record.Size = new System.Drawing.Size(143, 38);
+            this.btn_record.TabIndex = 8;
+            this.btn_record.Text = "开始录制";
+            this.btn_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_record.UseVisualStyleBackColor = false;
             // 
             // btn_min
             // 
@@ -120,6 +137,7 @@
             this.btn_settings.TabIndex = 2;
             this.btn_settings.Text = "设置";
             this.btn_settings.UseVisualStyleBackColor = false;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // btn_editform
             // 
@@ -135,6 +153,7 @@
             this.btn_editform.TabIndex = 3;
             this.btn_editform.Text = "编辑";
             this.btn_editform.UseVisualStyleBackColor = false;
+            this.btn_editform.Click += new System.EventHandler(this.btn_editform_Click);
             // 
             // btn_depository
             // 
@@ -176,23 +195,6 @@
             this.panel_container.Size = new System.Drawing.Size(1132, 669);
             this.panel_container.TabIndex = 1;
             // 
-            // btn_record
-            // 
-            this.btn_record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.btn_record.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_record.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_record.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_record.ForeColor = System.Drawing.Color.White;
-            this.btn_record.Image = global::videoeditor.Properties.Resources.record;
-            this.btn_record.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_record.Location = new System.Drawing.Point(641, 14);
-            this.btn_record.Name = "btn_record";
-            this.btn_record.Size = new System.Drawing.Size(143, 38);
-            this.btn_record.TabIndex = 8;
-            this.btn_record.Text = "开始录制";
-            this.btn_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_record.UseVisualStyleBackColor = false;
-            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -202,6 +204,7 @@
             this.Controls.Add(this.panel_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mainform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.mainform_Load);
             this.panel_top.ResumeLayout(false);
